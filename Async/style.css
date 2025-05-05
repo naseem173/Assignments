@@ -76,6 +76,8 @@ li{
 
     list-style-type: none;
 }
+/* changing color for alternative columns */
+
 
 li:nth-child(even){
     background-color: #2aafed;
