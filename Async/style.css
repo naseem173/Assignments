@@ -1,0 +1,93 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Importing Google Fonts  */
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f0f0;
+}
+
+/* main canvas  */
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #A4B0F5;
+    
+}
+h1{
+    font-size: 2.5rem;
+    color: #190580;
+    margin-bottom: 20px;
+}
+/* 
+display box */
+
+.box{
+    flex-direction: column;
+    width: 50%;
+    height: 70%;
+    background-color: #c2eeeb;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* basic responsive design */
+
+@media screen and (max-width: 768px){
+    .box{
+        width: 90%;
+        height: 90%;
+    }
+    
+}
+
+button{
+    padding: 10px 20px;
+    background-color: #9BA2FF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+button:hover{
+    background-color: #4C4C9D;
+}
+
+#output{
+    margin: 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+/* removing the default list style */
+
+li{
+
+    list-style-type: none;
+}
+
+li:nth-child(even){
+    background-color: #2aafed;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+strong{
+    color: #4e0909;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 20px;
+}
+
