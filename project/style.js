@@ -54,6 +54,39 @@ function updateWeatherDisplay(currentData) {
   `;
 }
 
+// Update the 5-day forecast display
+function updateForecastDisplay(forecastList) {
+  const forecastDisplay = document.getElementById("forecastDisplay");
+  forecastDisplay.innerHTML = "";
+
+  const dailyForecast = {};
+
+  forecastList.forEach((entry) => {
+    const date = entry.dt_txt.split(" ")[0];
+    if (!dailyForecast[date] && entry.dt_txt.includes("12:00:00")) {
+      dailyForecast[date] = entry;
+    }
+  });
+
+  Object.values(dailyForecast).forEach((entry) => {
+    const iconUrl = `https://openweathermap.org/img/wn/${entry.weather[0].icon}@2x.png`;
+
+    forecastDisplay.innerHTML += `
+      <div class="bg-white shadow rounded p-4 text-center">
+        <h3 class="font-semibold mb-2">${new Date(
+          entry.dt_txt
+        ).toLocaleDateString()}</h3>
+        <img src="${iconUrl}" alt="${
+      entry.weather[0].main
+    }" class="mx-auto w-16 h-16" />
+        <p>${entry.main.temp}°C</p>
+        <p>${entry.weather[0].main}</p>
+      </div>
+    `;
+  });
+}
+
+
 // Update recent cities in localStorage
 function updateRecentCities(city) {
   let cities = JSON.parse(localStorage.getItem("recentCities")) || [];
